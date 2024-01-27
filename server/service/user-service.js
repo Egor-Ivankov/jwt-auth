@@ -30,11 +30,30 @@ class UserService {
         const user = await UserModel.findOne({ activationLink });
 
         if (!user) {
-            throw new ApiError.BadRequest('Bad activation link');
+            throw ApiError.BadRequest('Bad activation link');
         }
 
         user.isActivated = true;
         await user.save();
+    }
+
+    async login(email, password) {
+        const user = await UserModel.findOne({ email });
+
+        if (!user) {
+            throw ApiError.BadRequest('User with this email not found');
+        }
+
+        const isPassEquals = await bcrypt.compare(password, user.password);
+
+        if (!isPassEquals) {
+            throw ApiError.BadRequest('Wrong password');
+        }
+
+        const userDto = new UserDto(user);
+        const tokens = tokenService.generateTokens({ ...userDto });
+        await tokenService.saveToken(userDto.id, tokens.refreshToken);
+        return { ...tokens, user: userDto };
     }
 }
 
