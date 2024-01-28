@@ -1,0 +1,27 @@
+.header {
+    margin-top: 10%;
+    color: rgba(255, 255, 255, 0.836);
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 60px;
+    letter-spacing: .2px;
+}
+
+.loginLink {
+    display: block;
+    width: max-content;
+    color: rgba(255, 255, 255, 0.911);
+    margin-top: 3%;
+    padding-bottom: 5px;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.37);
+    text-underline-offset: 10px;
+    text-decoration-thickness: 1px;
+    font-size: 20px;
+    letter-spacing: .6px;
+    transition: color .3s ease;
+}
+
+.loginLink:hover {
+    color: rgba(255, 255, 255, 0.568);
+}
