@@ -8,7 +8,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
 
     return (
-        <section className={styles.container}>
+        <section className={styles.containerLogin}>
             <form className={styles.form}>
                 <FormHeader header="Login"/>
                 <input 

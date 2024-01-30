@@ -1,0 +1,19 @@
+.container {
+    max-height: 90vh;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes progress {
+    from {
+        stroke-dasharray: 0 700;
+    }
+    to {
+        stroke-dasharray: 500;
+    }
+}
+.progress {
+    animation: progress .6s linear infinite;
+    animation-direction: alternate;
+}

@@ -1,16 +1,21 @@
+import { lazy, Suspense } from 'react';
 import {Route, Routes} from "react-router-dom";
-import Login from "../authorization/login/login";
-import Registration from "../authorization/registration/registration";
-import Home from "../home/home";
+import Spinner from '../spinner/spinner';
+
+const Login = lazy(() => import("../authorization/login/login"));
+const Registration = lazy(() => import("../authorization/registration/registration"));
+const Home = lazy(() => import("../home/home"));
 
 function AppRoutes() {
     
     return (
-        <Routes>
-            <Route path="/" element={ <Home/> }/>
-            <Route path="/api/login" element={ <Login/> }/>
-            <Route path="/api/registration" element={ <Registration/> }/>
-        </Routes>
+        <Suspense fallback={ <Spinner/> }>
+            <Routes>
+                <Route path="/" element={ <Home/> }/>
+                <Route path="/api/login" element={ <Login/> }/>
+                <Route path="/api/registration" element={ <Registration/> }/>
+            </Routes>
+        </Suspense>
     )
 }
 

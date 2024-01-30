@@ -4,7 +4,7 @@ import styles from '../../../styles/Form.module.css';
 
 export default function Registration() {
     return (
-        <section className={styles.container}>
+        <section className={styles.containerRegistration}>
             <form className={styles.form}>
                 <FormHeader header="Registration"/>
                 <input type="text" className={styles.formInput} placeholder="Enter your nickname"/>
