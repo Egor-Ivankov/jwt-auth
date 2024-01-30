@@ -4,7 +4,7 @@ import Registration from "../authorization/registration/registration";
 import Home from "../home/home";
 
 function AppRoutes() {
-
+    
     return (
         <Routes>
             <Route path="/" element={ <Home/> }/>

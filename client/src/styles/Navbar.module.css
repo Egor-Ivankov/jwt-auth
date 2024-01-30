@@ -6,22 +6,25 @@
     align-items: center;
 }
 
+.mainLogo {
+    color: rgba(255, 255, 255, 0.911);
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+    cursor: default;
+}
+
 .menuLink {
     width: max-content;
     color: rgba(255, 255, 255, 0.911);
     text-decoration: none;
-    transition: color .3s ease;
     font-size: 18px;
     font-weight: 400;
     letter-spacing: .6px;
     cursor: pointer;
+    transition: color .3s ease;
 }
 
 .menuLink:hover {
     color: rgba(255, 255, 255, 0.568);
-}
-
-.menuLink:first-child {
-    font-size: 30px;
-    letter-spacing: 1.3px;
 }

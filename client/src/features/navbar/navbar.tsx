@@ -5,9 +5,7 @@ export default function Navbar() {
     return (
         <nav>
             <div className={styles.menu}>
-                <Link to="/" className={styles.menuLink}> 
-                    Any.do
-                </Link>
+                <h2 className={styles.mainLogo}>Any.do</h2>
 
                 <Link to="/" className={styles.menuLink}> 
                     Products

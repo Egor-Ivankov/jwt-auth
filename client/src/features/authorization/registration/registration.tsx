@@ -1,15 +1,20 @@
-import styles from '../../../styles/Registration.module.css';
+import FormHeader from '../form-header/form-header';
+import { Link } from 'react-router-dom';
+import styles from '../../../styles/Form.module.css';
 
 export default function Registration() {
     return (
-        <section className={styles.registrationContainer}>
-            <form className={styles.registrationForm}>
-                <h2 className={styles.registrationHeader}>Registration form</h2>
-                <input type="text" className={styles.registrationFormInput} placeholder="Enter your nickname"/>
-                <input type="text" className={styles.registrationFormInput} placeholder="Enter your email"/>
-                <input type="password" className={styles.registrationFormInput} placeholder="Enter your password"/>
-                <input type="date" className={styles.registrationFormInput}/>
-                <button className={styles.registrationFormButton}>Register</button>
+        <section className={styles.container}>
+            <form className={styles.form}>
+                <FormHeader header="Registration"/>
+                <input type="text" className={styles.formInput} placeholder="Enter your nickname"/>
+                <input type="text" className={styles.formInput} placeholder="Enter your email"/>
+                <input type="password" className={styles.formInput} placeholder="Enter your password"/>
+                <input type="date" className={styles.formInput}/>
+                <div className={styles.buttons}>
+                    <button className={styles.formButton}>Login</button>
+                    <Link to='/api/login' className={styles.link}>Don't have an account yet?</Link>
+                </div>
             </form>
         </section>
     )
